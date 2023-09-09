@@ -4,6 +4,7 @@ import { defineConfig } from 'astro/config';
 // export default defineConfig({});
 
 // WSL用
+import preact from "@astrojs/preact";
 export default defineConfig({
   experimental: {
     viewTransitions: true
@@ -11,8 +12,9 @@ export default defineConfig({
   vite: {
     server: {
       watch: {
-        usePolling: true,
-      },
-    },
+        usePolling: true
+      }
+    }
   },
+  integrations: [preact()]
 });
